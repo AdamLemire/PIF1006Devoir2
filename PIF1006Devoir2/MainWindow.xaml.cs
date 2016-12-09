@@ -40,9 +40,6 @@ namespace PIF1006Devoir2
             MsgDechiffreTextBlock.Text = Chiffrement.Dechiffrer(ResultatsTextBlock.Text, KeyBox.Text);
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            MsgDechiffreTextBlock.Text = Chiffrement.TestChiffrer(MsgBox.Text, KeyBox.Text);
-        }
+     
     }
 }

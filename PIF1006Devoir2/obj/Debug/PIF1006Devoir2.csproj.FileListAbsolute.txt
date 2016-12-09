@@ -17,7 +17,6 @@ X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.exe
 X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.pdb
 X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\bin\Debug\PIF1006Devoir2.exe
 X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\bin\Debug\PIF1006Devoir2.pdb
-X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.csprojResolveAssemblyReference.cache
 X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\MainWindow.g.cs
 X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\App.g.cs
 X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2_MarkupCompile.cache
