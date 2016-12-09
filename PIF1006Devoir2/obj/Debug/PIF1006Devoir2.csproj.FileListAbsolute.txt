@@ -1,0 +1,14 @@
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\bin\Debug\PIF1006Devoir2.exe.config
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\MainWindow.g.cs
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\App.g.cs
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2_MarkupCompile.cache
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2_MarkupCompile.lref
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\MainWindow.baml
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.g.resources
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.Properties.Resources.resources
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.csproj.GenerateResource.Cache
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.pdb
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\bin\Debug\PIF1006Devoir2.exe
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\bin\Debug\PIF1006Devoir2.pdb
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.exe
+D:\Dropbox\UQTR\PIF1006 - Math pour info 2\PIF1006_Devoir2\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.csprojResolveAssemblyReference.cache
