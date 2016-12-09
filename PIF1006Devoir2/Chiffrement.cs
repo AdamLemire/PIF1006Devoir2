@@ -28,10 +28,7 @@ namespace PIF1006Devoir2
 
             int msgLength = message.Length;
             byte[] msgMatrix = new byte[msgLength];
-            for (int i = 0; i < msgLength; i++)
-            {
-                msgMatrix[i] = Convert.ToByte(message[i]);
-            }
+            msgMatrix = System.Text.Encoding.UTF8.GetBytes(message);
 
 
             //écriture du message dans tableau 2D
@@ -39,6 +36,8 @@ namespace PIF1006Devoir2
             int position = 0;
             if (msgLength % keyLength != 0) x++;
             byte[,] msgTable = new byte[x, keyLength];
+            char vide = ' ';  //vecteur d'ititialisation identique au chiffrement
+            byte videByte = Convert.ToByte(vide);
 
             for (int i = 0; i < x; i++)
             {
@@ -49,6 +48,7 @@ namespace PIF1006Devoir2
                         msgTable[i, j] = msgMatrix[position];
                         position++;
                     }
+                    else msgTable[i, j] = videByte;
                 }
             }
 
@@ -64,26 +64,39 @@ namespace PIF1006Devoir2
 
 
             //texte transposé en une colonne selon la clé fournie
-            byte[] msgTransList = new byte[keyLength * x];//[msgLength];
+
+            byte[] msgTransList = new byte[keyLength * x];
             int positionTrans = 0;
-            int nbCharNextRow;
             if (msgLength % keyLength != 0)
-                nbCharNextRow = (msgLength % keyLength);
-            else nbCharNextRow = keyLength;
 
-
-            for (int j = 0; j < keyLength; j++)//lecture colonne par colonne
-            {
                 for (int i = 0; i < x; i++)
                 {
-                    //if ((msgTableTrans[i, j] !=0)) //(positionTrans < msgLength) &&(i < x-1 || (keyMatrix[j]) <= nbCharNextRow) )
-                    //{
-                    msgTransList[positionTrans] = msgTableTrans[i, j]; //marche pas, commence pas par la bonne colonne
-                    positionTrans++;
-                    //}
-
+                    for (int j = 0; j < keyLength; j++)
+                    {
+                        msgTransList[positionTrans] = msgTableTrans[i, j];
+                        positionTrans++;
+                    }
                 }
-            }
+            //byte[] msgTransList = new byte[keyLength * x];//[msgLength];
+            //int positionTrans = 0;
+            //int nbCharNextRow;
+            //if (msgLength % keyLength != 0)
+            //    nbCharNextRow = (msgLength % keyLength);
+            //else nbCharNextRow = keyLength;
+
+
+            //for (int j = 0; j < keyLength; j++)//lecture colonne par colonne
+            //{
+            //    for (int i = 0; i < x; i++)
+            //    {
+            //        //if ((msgTableTrans[i, j] !=0)) //(positionTrans < msgLength) &&(i < x-1 || (keyMatrix[j]) <= nbCharNextRow) )
+            //        //{
+            //        msgTransList[positionTrans] = msgTableTrans[i, j]; //marche pas, commence pas par la bonne colonne
+            //        positionTrans++;
+            //        //}
+
+            //    }
+            //}
 
             //chiffrement du message
 
@@ -166,8 +179,15 @@ namespace PIF1006Devoir2
                 }
             }
 
-            string messageDechiffre = "";
-            messageDechiffre += System.Text.Encoding.UTF8.GetString(msgRetrans);
+            byte[] msgListSansZero = new byte[msgLength];
+
+            for (int i = 0; i < msgLength; i++)
+            {
+                msgListSansZero[i] = msgRetrans[i];
+            }
+
+            string messageDechiffre = System.Text.Encoding.UTF8.GetString(msgRetrans);
+           
 
 
             return messageDechiffre;
@@ -184,25 +204,22 @@ namespace PIF1006Devoir2
 
         public static string TestChiffrer(String message, String cle)
         {
-            char[] VI = { 'a' };  //vecteur d'ititialisation identique au chiffrement
-            byte[] VIbyte = System.Text.Encoding.UTF8.GetBytes(VI);
+            char VI = 'a';  //vecteur d'ititialisation identique au chiffrement
+            byte VIbyte = Convert.ToByte(VI);
             int keyLength = cle.Length;
             int msgLength = message.Length;
             byte[] msgMatrix = new byte[msgLength];
 
-
-
-
-            //for (int i = 0; i < msgLength; i++)
-            //{
             msgMatrix = System.Text.Encoding.UTF8.GetBytes(message);
-            //}
+
 
             //écriture du message dans tableau 2D
             int x = msgLength / keyLength;
             int position = 0;
             if (msgLength % keyLength != 0) x++;
             byte[,] msgTable = new byte[x, keyLength];
+            char vide = ' ';  //vecteur d'ititialisation identique au chiffrement
+            byte videByte = Convert.ToByte(vide);
 
             for (int i = 0; i < x; i++)
             {
@@ -213,18 +230,14 @@ namespace PIF1006Devoir2
                         msgTable[i, j] = msgMatrix[position];
                         position++;
                     }
-                    else msgTable[i, j] = 0;
+                    else msgTable[i, j] = videByte;
                 }
             }
 
             //texte transposé en une colonne
             byte[] msgTransList = new byte[keyLength * x];
             int positionTrans = 0;
-            int nbCharNextRow;
             if (msgLength % keyLength != 0)
-                nbCharNextRow = (msgLength % keyLength);
-            else nbCharNextRow = keyLength;
-
 
             for (int i = 0; i < x; i++)
             {
@@ -243,46 +256,29 @@ namespace PIF1006Devoir2
                 if (msgTransList[i] != 0)
                 {
                    
-                    if (i == 0) msgTransList[i] = (byte)(msgTransList[i] ^ VIbyte[0]);
-                    //else if (msgTransList[i - 1] != 0) msgTransList[i] = (byte)(msgTransList[i] ^ msgTransList[i - 1]);
-                    else msgTransList[i] = (byte)(msgTransList[i] ^ msgTransList[i - w]);
+                    if (i == 0) msgTransList[i] = (byte)(msgTransList[i] ^ VIbyte);
+                    else msgTransList[i] = (byte)(msgTransList[i] ^ msgTransList[i - 1]);
                 }
             }
-
-            //-----> idée : mettre un espace dans les cases vides pour qu'elles puissent etre chiffrées et déchiffrées (avec ceux les suivant aussi)
 
             //dechiffrement
             byte[] msgMatrixTmp = new byte[msgTransList.Length];
-            int z = 1;
+
             for (int i = 0; i < msgTransList.Length; i++)
             {
-                if (msgTransList[i] != 0)
-                {
-
-                    if (msgTransList[i-z] == 0) z++;
-
-                    if (i == 0) msgMatrixTmp[i] = (byte)(msgTransList[i] ^ VIbyte[0]);
-                    else  msgMatrixTmp[i] = (byte)(msgTransList[i] ^ msgTransList[i - z]);
-                    //else msgMatrixTmp[i] = (byte)(msgTransList[i] ^ msgTransList[i - 2]);(msgTransList[i] != 0)
 
 
-
-                }
+                    if (i == 0) msgMatrixTmp[i] = (byte)(msgTransList[i] ^ VIbyte);
+                    else  msgMatrixTmp[i] = (byte)(msgTransList[i] ^ msgTransList[i - 1]);
+            
             }
 
             byte[] msgListSansZero = new byte[msgLength];
-            int pos = 0;
+
             for (int i = 0; i < msgLength; i++)
             {
-                if (msgTransList[i] != 0)
-                {
-                    msgListSansZero[pos] = msgMatrixTmp[i];
-                    pos++;
-                }
+                    msgListSansZero[i] = msgMatrixTmp[i];
             }
-
-
-
 
             string messageDechiffre = System.Text.Encoding.UTF8.GetString(msgListSansZero);
             return messageDechiffre;
