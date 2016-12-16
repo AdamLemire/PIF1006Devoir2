@@ -8,16 +8,14 @@
         Title="Encodage par CBC" Height="350" Width="525">
     <Grid>
         <TextBlock x:Name="ResultatsTextBlock" HorizontalAlignment="Left" Margin="19,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="66" Width="389"/>
-        <TextBox x:Name="MsgBox" HorizontalAlignment="Left" Height="51" Margin="175,35,0,0" TextWrapping="Wrap" Text="Message a chiffrer" VerticalAlignment="Top" Width="233" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="MsgBox" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="51" Margin="175,35,0,0" TextWrapping="Wrap" Text="Message a chiffrer" VerticalAlignment="Top" Width="233" TextChanged="textBox_TextChanged"/>
         <Button x:Name="ChiffrerButton" Content="Chiffrer" HorizontalAlignment="Left" Margin="423,38,0,0" VerticalAlignment="Top" Width="75" Click="ChiffrerButton_Click"/>
-        <TextBox x:Name="KeyBox" HorizontalAlignment="Left" Height="23" Margin="19,35,0,0" TextWrapping="Wrap" Text="Clé" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="KeyBox" HorizontalAlignment="Left" Height="23" Margin="19,35,0,0" TextWrapping="Wrap" Text="1 2 3" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="MsgDechiffreTextBlock" HorizontalAlignment="Left" Margin="19,234,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="61" Width="389"/>
-        <Label x:Name="DechiffreLabel" Content="Message déchiffré :" HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="DechiffreLabel" Content="Message déchiffré :" HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Button x:Name="DechiffreButton" Content="Déchiffrer" HorizontalAlignment="Left" Margin="423,117,0,0" VerticalAlignment="Top" Width="75" Click="DechiffreButton_Click"/>
-        <Label x:Name="ChiffreLabel" Content="Message encodé :" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="KeyLabel" Content="Clé :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="MsgLabel" Content="Message :" HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top"/>
-
-
+        <Label x:Name="ChiffreLabel" Content="Message encodé :" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="KeyLabel" Content="Clé :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="MsgLabel" Content="Message :" HorizontalAlignment="Left" Margin="166,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
     </Grid>
 </Window>

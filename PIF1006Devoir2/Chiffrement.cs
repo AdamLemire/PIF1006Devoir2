@@ -1,4 +1,9 @@
-﻿using System;
+﻿//Devoir 2 - Cipher Block Chaining et chiffrement par transposition
+//Auteurs : Adam Lemire et Rémi Petiteau
+//16 décembre 2016
+//PIF1006
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,7 +68,6 @@ namespace PIF1006Devoir2
                 }
             }
 
-
             //texte transposé remis en une colonne
 
             byte[] msgTransList = new byte[keyLength * x];
@@ -77,7 +81,6 @@ namespace PIF1006Devoir2
                     positionTrans++;
                 }
             }
-
 
             //chiffrement du message
 
@@ -101,8 +104,6 @@ namespace PIF1006Devoir2
             byte VIbyte = Convert.ToByte(VI);
             int msgLength = message.Length;
 
-
-
             //conversion de la clé en byte, identique au chiffrement
             string[] sKeyMatrix = cle.Split(' ');
             int keyLength = sKeyMatrix.Length; //aussi nombre de colonnes
@@ -113,14 +114,11 @@ namespace PIF1006Devoir2
             }
 
             //conversion du message chiffré en tableau de byte et déchiffrement
-
-
             byte[] msgMatrix = new byte[msgLength];
-            byte[] msgMatrixTmp = System.Text.Encoding.UTF8.GetBytes(message);//new byte[msgLength];
+            byte[] msgMatrixTmp = System.Text.Encoding.UTF8.GetBytes(message);
             //msgMatrixTmp = 
             for (int i = 0; i < msgLength; i++)
             {
-                //msgMatrixTmp[i] = Convert.ToByte(message[i]);
                 if (i == 0) msgMatrix[i] = (byte)(msgMatrixTmp[i] ^ VIbyte);
                 else msgMatrix[i] = (byte)(msgMatrixTmp[i] ^ msgMatrix[i - 1]);
             }
@@ -128,7 +126,6 @@ namespace PIF1006Devoir2
             // placement du message dans un tableau 2D pour retransposition
             int x = msgLength / keyLength;
             int position = 0;
-            //if (msgLength % keyLength != 0) x++; devrait jamais avoir lieu
             byte[,] msgTable = new byte[x, keyLength];
 
             for (int j = 0; j < keyLength; j++)
@@ -179,9 +176,8 @@ namespace PIF1006Devoir2
             {
                 msgListSansZero[i] = msgRetrans[i];
             }
-
             string messageDechiffre = System.Text.Encoding.UTF8.GetString(msgListSansZero);
             return messageDechiffre;
-        }   
+        }
     }
 }

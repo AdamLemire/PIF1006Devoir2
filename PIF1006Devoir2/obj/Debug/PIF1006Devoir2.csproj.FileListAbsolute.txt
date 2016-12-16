@@ -25,3 +25,4 @@ X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\MainWindow.baml
 X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.g.resources
 X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.Properties.Resources.resources
 X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.csproj.GenerateResource.Cache
+X:\pif1006\PIF1006Devoir2\PIF1006Devoir2\obj\Debug\PIF1006Devoir2.csprojResolveAssemblyReference.cache

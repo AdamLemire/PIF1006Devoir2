@@ -16,7 +16,11 @@ using System.Windows.Shapes;
 namespace PIF1006Devoir2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// INTERFACE WPF
+    /// Devoir 2 - Cipher Block Chaining et chiffrement par transposition
+    /// Auteurs : Adam Lemire et Rémi Petiteau
+    /// 16 décembre 2016
+    /// PIF1006
     /// </summary>
     public partial class MainWindow : Window
     {
